@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/proxy-pos/:path*",
+      "destination": "https://pos.gotmsolutions.com/:path*"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

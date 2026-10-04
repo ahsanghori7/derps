@@ -1,0 +1,20 @@
+{
+  "ios": {
+    "minVersion": "1.9.4",
+    "latestVersion": "1.9.4",
+    "forceUpdate": true,
+    "storeUrl": "https://apps.apple.com/app/id6751432809",
+    "title": "Update required",
+    "message": "A newer version of Derps is on the App Store. Please update to continue."
+  },
+  "android": {
+    "minVersion": "1.9.4",
+    "latestVersion": "1.9.4",
+    "minVersionCode": 15,
+    "latestVersionCode": 15,
+    "forceUpdate": true,
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.derps.app",
+    "title": "Update required",
+    "message": "A newer version of Derps is on the Play Store. Please update to continue."
+  }
+}

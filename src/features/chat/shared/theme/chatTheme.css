@@ -1,0 +1,655 @@
+/*
+ * Centralized chat & video-call theming.
+ *
+ * Toggle: set data-chat-theme on .chat-theme-root via chatThemeConfig.js
+ *   - "app"        → follows application dark/light theme (default)
+ *   - "standalone" → self-contained gray palette (easy revert)
+ */
+
+/* ── Standalone (legacy) tokens ─────────────────────────────────────────── */
+
+.chat-theme-root[data-chat-theme='standalone'] {
+  --chat-bg: #f3f4f6;
+  --chat-surface: #ffffff;
+  --chat-bg-muted: #f9fafb;
+  --chat-chrome: #ffffff;
+  --chat-chrome-alt: #f3f4f6;
+  --chat-text: #1f2937;
+  --chat-text-secondary: #374151;
+  --chat-text-muted: #6b7280;
+  --chat-text-subtle: #9ca3af;
+  --chat-border: #e5e7eb;
+  --chat-border-strong: #d1d5db;
+  --chat-hover: #f3f4f6;
+  --chat-control-bg: #f3f4f6;
+  --chat-control-bg-hover: #e5e7eb;
+  --chat-input-bg: #ffffff;
+  --chat-input-text: #111827;
+  --chat-input-placeholder: #6b7280;
+  --chat-popover-bg: #ffffff;
+  --chat-popover-text: #374151;
+  --chat-bubble-own-bg: #e5e7eb;
+  --chat-bubble-own-text: #1f2937;
+  --chat-bubble-other-bg: rgba(59, 130, 246, 1);
+  --chat-bubble-other-text: #ffffff;
+  --chat-bubble-reply-own-bg: #f3f4f6;
+  --chat-bubble-reply-own-text: #4b5563;
+  --chat-bubble-reply-own-border: #9ca3af;
+  --chat-bubble-reply-other-bg: #2563eb;
+  --chat-bubble-reply-other-text: #dbeafe;
+  --chat-bubble-reply-other-border: #93c5fd;
+  --chat-selected-bg: #eff6ff;
+  --chat-selected-border: rgba(59, 130, 246, 1);
+  --chat-accent: #3b82f6;
+  --chat-accent-hover: #2563eb;
+  --chat-accent-muted: #60a5fa;
+  --chat-overlay-surface: rgba(255, 255, 255, 0.95);
+  --chat-video-tile-bg: #f3f4f6;
+  --chat-video-tile-border: #d1d5db;
+  --chat-video-tile-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --chat-scrollbar-thumb: rgba(156, 163, 175, 0.55);
+  --chat-scrollbar-thumb-hover: rgba(107, 114, 128, 0.75);
+  --chat-ring-offset: #f9fafb;
+}
+
+.dark .chat-theme-root[data-chat-theme='standalone'] {
+  --chat-bg: #111827;
+  --chat-surface: #1f2937;
+  --chat-bg-muted: #1f2937;
+  --chat-chrome: #1f2937;
+  --chat-chrome-alt: #111827;
+  --chat-text: #ffffff;
+  --chat-text-secondary: #e5e7eb;
+  --chat-text-muted: #9ca3af;
+  --chat-text-subtle: #6b7280;
+  --chat-border: #374151;
+  --chat-border-strong: #4b5563;
+  --chat-hover: #374151;
+  --chat-control-bg: #374151;
+  --chat-control-bg-hover: #4b5563;
+  --chat-input-bg: #374151;
+  --chat-input-text: #ffffff;
+  --chat-input-placeholder: #9ca3af;
+  --chat-popover-bg: #1f2937;
+  --chat-popover-text: #e5e7eb;
+  --chat-bubble-own-bg: #4b5563;
+  --chat-bubble-own-text: #f3f4f6;
+  --chat-bubble-other-bg: rgba(59, 130, 246, 1);
+  --chat-bubble-other-text: #ffffff;
+  --chat-bubble-reply-own-bg: #6b7280;
+  --chat-bubble-reply-own-text: #d1d5db;
+  --chat-bubble-reply-own-border: #9ca3af;
+  --chat-bubble-reply-other-bg: #2563eb;
+  --chat-bubble-reply-other-text: #dbeafe;
+  --chat-bubble-reply-other-border: #93c5fd;
+  --chat-selected-bg: rgba(30, 58, 138, 0.3);
+  --chat-selected-border: rgba(59, 130, 246, 1);
+  --chat-accent: #60a5fa;
+  --chat-accent-hover: #93c5fd;
+  --chat-accent-muted: #60a5fa;
+  --chat-overlay-surface: rgba(31, 41, 55, 0.95);
+  --chat-video-tile-bg: #1f2937;
+  --chat-video-tile-border: #4b5563;
+  --chat-video-tile-shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --chat-scrollbar-thumb: rgba(107, 114, 128, 0.55);
+  --chat-scrollbar-thumb-hover: rgba(156, 163, 175, 0.7);
+  --chat-ring-offset: #111827;
+}
+
+/* ── App theme tokens (aliases dashboard / sidebar variables) ───────────── */
+
+.chat-theme-root[data-chat-theme='app'] {
+  --chat-bg: var(--dashboard-bg);
+  --chat-surface: var(--dashboard-card-bg);
+  --chat-bg-muted: var(--dashboard-card-bg2);
+  --chat-chrome: var(--dashboard-card-bg);
+  --chat-chrome-alt: var(--dashboard-bg);
+  --chat-text: var(--dashboard-text-primary);
+  --chat-text-secondary: var(--dashboard-text-secondary);
+  --chat-text-muted: var(--dashboard-text-secondary);
+  --chat-text-subtle: var(--fieldsTitle);
+  --chat-border: var(--sidebar-divider);
+  --chat-border-strong: var(--sidebar-border);
+  --chat-hover: var(--sidebar-hover-bg);
+  --chat-control-bg: var(--dashboard-tab-box);
+  --chat-control-bg-hover: var(--sidebar-hover-bg);
+  --chat-input-bg: var(--dashboard-tab-box);
+  --chat-input-text: var(--dashboard-text-primary);
+  --chat-input-placeholder: var(--dashboard-text-secondary);
+  --chat-popover-bg: var(--dashboard-card-bg);
+  --chat-popover-text: var(--dashboard-text-primary);
+  --chat-bubble-own-bg: #e5e7eb;
+  --chat-bubble-own-text: var(--dashboard-text-primary);
+  --chat-bubble-other-bg: rgba(72, 128, 255, 1);
+  --chat-bubble-other-text: #ffffff;
+  --chat-bubble-reply-own-bg: var(--dashboard-card-bg2);
+  --chat-bubble-reply-own-text: var(--dashboard-text-secondary);
+  --chat-bubble-reply-own-border: var(--sidebar-divider);
+  --chat-bubble-reply-other-bg: rgba(56, 100, 204, 1);
+  --chat-bubble-reply-other-text: rgba(219, 234, 254, 1);
+  --chat-bubble-reply-other-border: rgba(147, 197, 253, 1);
+  --chat-selected-bg: rgba(72, 128, 255, 0.06);
+  --chat-selected-border: rgba(72, 128, 255, 1);
+  --chat-accent: rgba(72, 128, 255, 1);
+  --chat-accent-hover: rgba(56, 100, 204, 1);
+  --chat-accent-muted: var(--blueText);
+  --chat-overlay-surface: color-mix(in srgb, var(--dashboard-card-bg) 95%, transparent);
+  --chat-video-tile-bg: var(--dashboard-card-bg2);
+  --chat-video-tile-border: #d1d5db;
+  --chat-video-tile-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --chat-scrollbar-thumb: color-mix(in srgb, var(--dashboard-text-secondary) 55%, transparent);
+  --chat-scrollbar-thumb-hover: color-mix(in srgb, var(--dashboard-text-secondary) 75%, transparent);
+  --chat-ring-offset: var(--dashboard-bg);
+}
+
+.dark .chat-theme-root[data-chat-theme='app'] {
+  --chat-bubble-own-bg: #4b5563;
+  --chat-bubble-own-text: #f3f4f6;
+  --chat-selected-bg: rgba(72, 128, 255, 0.1);
+  --chat-accent: #93c5fd;
+  --chat-accent-hover: #bfdbfe;
+  --chat-accent-muted: #93c5fd;
+  --chat-video-tile-shadow: 0 1px 3px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Main background color for chat */
+
+main:has(.chat-theme-root[data-chat-theme='app']) {
+  height: 100%;
+  background-color: var(--dashboard-bg);
+}
+
+main:has(.chat-theme-root[data-chat-theme='standalone']) {
+  height: 100%;
+  background-color: #f3f4f6;
+}
+
+.dark main:has(.chat-theme-root[data-chat-theme='standalone']) {
+  height: 100%;
+  background-color: #111827;
+}
+/* ── Semantic utility classes ───────────────────────────────────────────── */
+
+.chat-bg {
+  background-color: var(--chat-bg);
+}
+
+.chat-surface {
+  background-color: var(--chat-surface);
+  color: var(--chat-text);
+}
+
+.chat-bg-muted {
+  background-color: var(--chat-bg-muted);
+}
+
+.chat-chrome {
+  background-color: var(--chat-chrome);
+}
+
+.chat-chrome-alt {
+  background-color: var(--chat-chrome-alt);
+}
+
+.chat-text {
+  color: var(--chat-text);
+}
+
+.chat-text-secondary {
+  color: var(--chat-text-secondary);
+}
+
+.chat-text-muted {
+  color: var(--chat-text-muted);
+}
+
+.chat-text-subtle {
+  color: var(--chat-text-subtle);
+}
+
+.chat-border {
+  border-color: var(--chat-border);
+}
+
+.chat-border-strong {
+  border-color: var(--chat-border-strong);
+}
+
+.chat-divider-b {
+  border-bottom: 1px solid var(--chat-border);
+}
+
+.chat-divider-t {
+  border-top: 1px solid var(--chat-border);
+}
+
+.chat-divider-r {
+  border-right: 1px solid var(--chat-border);
+}
+
+.chat-divider-l {
+  border-left: 1px solid var(--chat-border);
+}
+
+.chat-hover:hover {
+  background-color: var(--chat-hover);
+}
+
+.chat-control {
+  background-color: var(--chat-control-bg);
+  color: var(--chat-text);
+}
+
+.chat-control:hover {
+  background-color: var(--chat-control-bg-hover);
+}
+
+.chat-input {
+  background-color: var(--chat-input-bg);
+  color: var(--chat-input-text);
+  border: 1px solid var(--chat-border-strong);
+}
+
+.chat-input::placeholder {
+  color: var(--chat-input-placeholder);
+}
+
+.chat-popover {
+  background-color: var(--chat-popover-bg);
+  color: var(--chat-popover-text);
+  border: 1px solid var(--chat-border);
+}
+
+.chat-bubble-own {
+  background-color: var(--chat-bubble-own-bg);
+  color: var(--chat-bubble-own-text);
+}
+
+.chat-bubble-other {
+  background-color: var(--chat-bubble-other-bg);
+  color: var(--chat-bubble-other-text);
+}
+
+.chat-bubble-reply-own {
+  background-color: var(--chat-bubble-reply-own-bg);
+  color: var(--chat-bubble-reply-own-text);
+  border-left-color: var(--chat-bubble-reply-own-border);
+}
+
+.chat-bubble-reply-other {
+  background-color: var(--chat-bubble-reply-other-bg);
+  color: var(--chat-bubble-reply-other-text);
+  border-left-color: var(--chat-bubble-reply-other-border);
+}
+
+.chat-selected {
+  background-color: var(--chat-selected-bg);
+  border-left: 4px solid var(--chat-selected-border);
+}
+
+.chat-reply-target {
+  background-color: var(--chat-selected-bg);
+}
+
+.chat-accent {
+  color: var(--chat-accent);
+}
+
+.chat-accent:hover {
+  color: var(--chat-accent-hover);
+}
+
+.chat-accent-muted {
+  color: var(--chat-accent-muted);
+}
+
+.chat-overlay-surface {
+  background-color: var(--chat-overlay-surface);
+}
+
+.chat-video-tile {
+  background-color: var(--chat-video-tile-bg);
+  border: 1px solid var(--chat-video-tile-border, var(--chat-border-strong));
+  box-shadow: var(--chat-video-tile-shadow, 0 1px 3px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08));
+}
+
+.chat-icon-btn {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.chat-icon-btn:hover {
+  background-color: var(--chat-hover);
+}
+
+.chat-menu-item {
+  color: var(--chat-text-secondary);
+}
+
+.chat-menu-item:hover {
+  background-color: var(--chat-hover);
+}
+
+.chat-fullscreen {
+  background-color: var(--chat-chrome-alt);
+  color: var(--chat-text);
+}
+
+.chat-messages-area {
+  background-color: var(--chat-chrome-alt);
+}
+
+.chat-input-field {
+  background-color: var(--chat-input-bg);
+  color: var(--chat-input-text);
+  border: 1px solid var(--chat-border-strong);
+}
+
+.chat-input-field::placeholder {
+  color: var(--chat-input-placeholder);
+}
+
+/* Legacy aliases — prefer chat-call-media-on / chat-call-btn-muted */
+.chat-call-btn {
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #374151;
+}
+
+.chat-call-btn:hover {
+  background-color: #1f2937;
+  border-color: #1f2937;
+}
+
+.dark .chat-call-btn {
+  background-color: #6b7280;
+  border-color: #6b7280;
+}
+
+.dark .chat-call-btn:hover {
+  background-color: #9ca3af;
+  border-color: #9ca3af;
+}
+
+.chat-call-btn-muted {
+  background-color: #6b7280;
+  color: #f9fafb;
+  border: 1px solid #6b7280;
+}
+
+.chat-call-btn-muted:hover {
+  background-color: #4b5563;
+  border-color: #4b5563;
+}
+
+.chat-tab-active {
+  background-color: var(--chat-surface);
+  color: var(--chat-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.chat-tab-inactive {
+  color: var(--chat-text-secondary);
+}
+
+.chat-tab-inactive:hover {
+  background-color: color-mix(in srgb, var(--chat-surface) 70%, transparent);
+}
+
+.chat-reply-banner {
+  background-color: var(--chat-chrome-alt);
+  border: 1px solid var(--chat-border);
+}
+
+.chat-guest-panel {
+  background-color: color-mix(in srgb, var(--chat-surface) 70%, transparent);
+  border: 1px solid var(--chat-border);
+}
+
+.chat-timer-badge {
+  background-color: color-mix(in srgb, var(--chat-control-bg) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--chat-border-strong) 60%, transparent);
+}
+
+.chat-participant-actions {
+  border: 1px solid var(--chat-border);
+}
+
+/* Call UI buttons (PreJoin + in-call) — border matches fill; shadow lifts edges */
+.chat-call-media-on,
+.chat-prejoin-media-on,
+.chat-call-media-off,
+.chat-prejoin-media-off,
+.chat-call-btn-secondary,
+.chat-prejoin-cancel,
+.chat-call-btn-primary,
+.chat-prejoin-join,
+.chat-call-btn-danger,
+.chat-call-btn-muted,
+.chat-call-btn-active-yellow,
+.chat-call-btn,
+.chat-call-btn-success {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-call-media-on:hover,
+.chat-prejoin-media-on:hover,
+.chat-call-media-off:hover,
+.chat-prejoin-media-off:hover,
+.chat-call-btn-secondary:hover,
+.chat-prejoin-cancel:hover,
+.chat-call-btn-primary:hover:not(:disabled),
+.chat-prejoin-join:hover:not(:disabled),
+.chat-call-btn-danger:hover,
+.chat-call-btn-muted:hover,
+.chat-call-btn-active-yellow:hover,
+.chat-call-btn:hover,
+.chat-call-btn-success:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Media toggles — on (video / audio enabled) */
+.chat-call-media-on,
+.chat-prejoin-media-on,
+.chat-call-btn {
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #374151;
+}
+
+.chat-call-media-on:hover,
+.chat-prejoin-media-on:hover,
+.chat-call-btn:hover {
+  background-color: #1f2937;
+  border-color: #1f2937;
+}
+
+.dark .chat-call-media-on,
+.dark .chat-prejoin-media-on,
+.dark .chat-call-btn {
+  background-color: #6b7280;
+  color: #f9fafb;
+  border-color: #6b7280;
+}
+
+.dark .chat-call-media-on:hover,
+.dark .chat-prejoin-media-on:hover,
+.dark .chat-call-btn:hover {
+  background-color: #9ca3af;
+  border-color: #9ca3af;
+}
+
+/* Media toggles — off */
+.chat-call-media-off,
+.chat-prejoin-media-off {
+  background-color: #fecaca;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.chat-call-media-off:hover,
+.chat-prejoin-media-off:hover {
+  background-color: #fca5a5;
+  border-color: #fca5a5;
+}
+
+/* Letter-avatar pulse when the camera is off. Color comes from
+   --speaking-glow, set to that person's avatar color. */
+@keyframes chat-speaking-pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--speaking-glow, rgba(26, 115, 232, 0.55));
+  }
+  100% {
+    box-shadow: 0 0 0 14px transparent;
+  }
+}
+
+.chat-speaking-ring {
+  animation: chat-speaking-pulse 1.15s ease-out infinite;
+}
+
+/* Google Meet active speaker. A 4px ring stays on the frame, outside the
+   overflow:hidden tile, and a second glow expands and fades while the
+   person is talking. Camera-on uses Meet blue. Camera-off sets
+   --speaking-ring and --speaking-glow to the letter-avatar color. */
+@keyframes chat-meet-speak {
+  0% {
+    box-shadow:
+      0 0 0 4px var(--speaking-ring),
+      0 0 0 4px var(--speaking-glow);
+  }
+  100% {
+    box-shadow:
+      0 0 0 4px var(--speaking-ring),
+      0 0 0 18px transparent;
+  }
+}
+
+.chat-video-tile-frame.chat-video-tile-speaking {
+  --speaking-ring: #1A73E8;
+  --speaking-glow: rgba(26, 115, 232, 0.55);
+  animation: chat-meet-speak 1.15s ease-out infinite;
+}
+
+.dark .chat-video-tile-frame.chat-video-tile-speaking:not(.chat-video-tile-speaking-avatar) {
+  --speaking-ring: #8AB4F8;
+  --speaking-glow: rgba(138, 180, 248, 0.55);
+}
+
+.chat-video-tile-frame.chat-video-tile-speaking > .chat-video-tile {
+  border-width: 0;
+  box-shadow: none;
+}
+
+/* PreJoin camera preview + mic test panels — neutral gray edge (not app blue border) */
+.chat-prejoin-device-panel {
+  border: 1px solid #d1d5db;
+  box-shadow:
+    0 1px 3px rgba(55, 65, 81, 0.12),
+    0 2px 8px rgba(55, 65, 81, 0.1);
+}
+
+.dark .chat-prejoin-device-panel {
+  border-color: #6b7280;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.chat-call-btn-secondary,
+.chat-prejoin-cancel {
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 1px solid #ffffff;
+}
+
+.chat-call-btn-secondary:hover,
+.chat-prejoin-cancel:hover {
+  background-color: #f3f4f6;
+  border-color: #f3f4f6;
+}
+
+.dark .chat-call-btn-secondary,
+.dark .chat-prejoin-cancel {
+  background-color: #353B44;
+  color: #F4F6F8;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .chat-call-btn-secondary:hover,
+.dark .chat-prejoin-cancel:hover {
+  background-color: #3E4550;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.chat-call-btn-primary,
+.chat-prejoin-join {
+  background-color: #4880ff;
+  color: #ffffff;
+  border: 1px solid #4880ff;
+}
+
+.chat-call-btn-primary:hover:not(:disabled),
+.chat-prejoin-join:hover {
+  background-color: #3864cc;
+  border-color: #3864cc;
+}
+
+.chat-call-btn-primary:disabled,
+.chat-prejoin-join:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.chat-call-btn-primary:disabled:hover,
+.chat-prejoin-join:disabled:hover {
+  background-color: #4880ff;
+  border-color: #4880ff;
+}
+
+.chat-call-btn-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: 1px solid #ef4444;
+}
+
+.chat-call-btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.dark .chat-call-btn-muted {
+  background-color: #4b5563;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark .chat-call-btn-muted:hover {
+  background-color: #374151;
+  border-color: #374151;
+}
+
+.chat-call-btn-active-yellow {
+  background-color: #fbbc04;
+  color: #ffffff;
+  border: 1px solid #fbbc04;
+}
+
+.chat-call-btn-active-yellow:hover {
+  background-color: #f9ab00;
+  border-color: #f9ab00;
+}
+
+.chat-call-btn-success {
+  background-color: #22c55e;
+  color: #ffffff;
+  border: 1px solid #22c55e;
+}
+
+.chat-call-btn-success:hover {
+  background-color: #16a34a;
+  border-color: #16a34a;
+}

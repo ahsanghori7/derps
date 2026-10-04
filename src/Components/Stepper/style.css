@@ -1,0 +1,43 @@
+/* .stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--dashboard-bg);
+    border: 2px solid #c0c4cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--sidebar-text-primary);
+  }
+  
+  .step-label {
+    margin-left: 10px;
+    color: var(--sidebar-text-primary);
+    font-size: 14px;
+  }
+  
+  .step-line {
+    width: 50px;
+    height: 2px;
+    background-color: #c0c4cc;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  } */

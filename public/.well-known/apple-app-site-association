@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "84FSQ8J9FQ.com.derps-app",
+        "paths": [
+          "/home/call",
+          "/home/call/*",
+          "/join",
+          "/join/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "84FSQ8J9FQ.com.derps-app"
+    ]
+  }
+}

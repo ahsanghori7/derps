@@ -1,0 +1,66 @@
+/* Shared thin scrollbars for chat list, messages, group info, etc. */
+.chat-scroll,
+.chat-read-receipt-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chat-scrollbar-thumb, rgba(156, 163, 175, 0.55)) transparent;
+}
+
+.chat-scroll::-webkit-scrollbar,
+.chat-read-receipt-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track,
+.chat-read-receipt-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb,
+.chat-read-receipt-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--chat-scrollbar-thumb, rgba(156, 163, 175, 0.55));
+  border-radius: 9999px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover,
+.chat-read-receipt-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--chat-scrollbar-thumb-hover, rgba(107, 114, 128, 0.75));
+}
+
+.dark .chat-scroll,
+.dark .chat-read-receipt-scroll {
+  color-scheme: dark;
+}
+
+.chat-emoji-picker {
+  --epr-picker-border-radius: 0px;
+}
+
+.dark .chat-emoji-picker,
+.chat-emoji-picker.epr-dark-theme {
+  --epr-dark-bg-color: var(--chat-surface);
+  --epr-dark-picker-border-color: rgba(75, 85, 99, 0.9);
+  --epr-dark-search-input-bg-color: var(--chat-chrome-alt);
+  --epr-dark-text-color: #d1d5db;
+  --epr-dark-hover-bg-color: rgba(55, 65, 81, 0.95);
+  --epr-category-label-bg-color: var(--chat-surface);
+  color-scheme: dark;
+  scrollbar-color: rgba(107, 114, 128, 0.7) transparent;
+}
+
+.dark .chat-emoji-picker::-webkit-scrollbar,
+.chat-emoji-picker.epr-dark-theme::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark .chat-emoji-picker::-webkit-scrollbar-track,
+.chat-emoji-picker.epr-dark-theme::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark .chat-emoji-picker::-webkit-scrollbar-thumb,
+.chat-emoji-picker.epr-dark-theme::-webkit-scrollbar-thumb {
+  background-color: rgba(107, 114, 128, 0.7);
+  border-radius: 9999px;
+}

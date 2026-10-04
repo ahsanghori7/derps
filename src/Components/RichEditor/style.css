@@ -1,0 +1,121 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates. All rights reserved.
+ *
+ * This file provided by Facebook is for non-commercial testing and evaluation
+ * purposes only. Facebook reserves all rights not expressly granted.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+ .RichEditor-root {
+    background: #2B4BF20F;
+    border: 1px solid #6499FF;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    /* border-radius: 10px; */
+    /* padding: 15px; */
+  }
+  
+  .RichEditor-editor {
+    /* border-top: 1px solid #c1c1c1; */
+    cursor: text;
+    font-size: 16px;
+    margin-top: 10px;
+    min-height: 200px; /* Added this line */
+  }
+  
+  .RichEditor-editor .public-DraftEditorPlaceholder-root,
+  .RichEditor-editor .public-DraftEditor-content {
+    /* margin: 0 -15px -15px; */
+    padding: 15px;
+  }
+  
+  .RichEditor-editor .public-DraftEditor-content {
+    min-height: 50px;
+  }
+  
+  .RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+    display: none;
+  }
+  
+  .RichEditor-editor .RichEditor-blockquote {
+    border-left: 5px solid #eee;
+    color: #505050;
+    font-family: 'Hoefler Text', 'Georgia', serif;
+    font-style: italic;
+    margin: 16px 0;
+    padding: 10px 20px;
+  }
+  
+  .RichEditor-editor .public-DraftStyleDefault-pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+    font-size: 16px;
+    padding: 20px;
+  }
+  
+  .RichEditor-controls-container {
+    display: flex;
+    background-color: var(--navbar-dropdown-hover);
+    padding: 10px;
+    justify-content: flex-start;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  @media (max-width: 600px) {
+    .RichEditor-controls-container {
+      flex-direction: column;
+    }
+  }
+  
+  .RichEditor-controls {
+    display: flex;
+  }
+  
+  .RichEditor-styleButton {
+    color: var(--sidebar-text-selected);
+  cursor: pointer;
+  margin-right: 10px;
+    /* padding: 2px 0; */
+    display: inline-block;
+  }
+  
+  .RichEditor-activeButton {
+    color: var(--sidebar-text-selected);
+    font-weight: bold;
+  }
+  
+  .RichEditor-root h1{
+    font-size: 32px;
+  }
+  .RichEditor-root h2{
+    font-size: 24px;
+  }
+  .RichEditor-root h3{
+    font-size: 18.72px;
+  }
+  .RichEditor-root h4{
+    font-size: 16px;
+  }
+  .RichEditor-root h5{
+    font-size: 13.28px;
+  }
+  .RichEditor-root h6{
+    font-size: 10.72px;
+  }
+  
+  .RichEditor-arabic ol {
+    direction: rtl; 
+  }
+  
+  .RichEditor-arabic ol li {
+    text-align: right; 
+  }

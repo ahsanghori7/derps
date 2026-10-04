@@ -1,0 +1,30 @@
+/* src/Screens/MemoPopup/index.css */
+.description-container h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.description-container h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.description-container h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.description-container h4 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.description-container h5 {
+    font-size: 0.83em;
+    font-weight: bold;
+}
+
+.description-container h6 {
+    font-size: 0.67em;
+    font-weight: bold;
+}

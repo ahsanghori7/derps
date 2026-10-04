@@ -1,0 +1,234 @@
+:root {
+  /* Light theme variables */
+  --sidebar-bg: theme('colors.sidebar.bg.light');
+  --sidebar-text-primary: theme('colors.sidebar.text.primary.light');
+  --sidebar-text-secondary: theme('colors.sidebar.text.secondary.light');
+  --sidebar-text-selected: theme('colors.sidebar.text.selected.light');
+  --sidebar-hover-bg: theme('colors.sidebar.item.hover.light');
+  --sidebar-selected-bg: theme('colors.sidebar.item.selected.light');
+  --sidebar-border: theme('colors.sidebar.border.light');
+  --sidebar-divider: theme('colors.sidebar.divider.light');
+
+  /* New Sidebar variables — light */
+  --sidebarNew-bg: #ffffff;
+  --sidebarNew-text-primary: #2E2E2E;
+  --sidebarNew-text-secondary: rgba(46, 46, 46, 0.45);
+  --sidebarNew-text-selected: #0C79F7;
+  --sidebarNew-hover-bg: #F3F4F6;
+  --sidebarNew-selected-bg: #EAF1FD;
+  --sidebarNew-open-bg: #EAF1FD;
+  --sidebarNew-sub-selected-bg: transparent;
+  --sidebarNew-border: #0C79F7;
+  --sidebarNew-divider: #E5E7EB;
+  --sidebarNew-icon: #2E2E2E;
+  --sidebarNew-icon-selected: #0C79F7;
+
+  /* Navbar variables */
+  --navbar-bg: theme('colors.navbar.bg.light');
+  --navbar-text-primary: theme('colors.navbar.text.primary.light');
+  --navbar-text-secondary: theme('colors.navbar.text.secondary.light');
+  --navbar-text-border: theme('colors.navbar.text.border.light');
+  --navbar-border: theme('colors.navbar.border.light');
+  --navbar-dropdown-bg: theme('colors.navbar.dropdown.bg.light');
+  --navbar-dropdown-hover: theme('colors.navbar.dropdown.hover.light');
+  --navbar-dropdown-text: theme('colors.navbar.dropdown.text.light');
+
+  /* Dashboard variables */
+  --dashboard-bg: theme('colors.dashboard.bg.light');
+  --dashboard-card-bg: theme('colors.dashboard.card.bg.light');
+  --dashboard-card-bg2: theme('colors.dashboard.card.bg2.light');
+  --dashboard-text-primary: theme('colors.dashboard.card.text.primary.light');
+  --dashboard-text-secondary: theme('colors.dashboard.card.text.secondary.light');
+  --dashboard-tab-inactive: theme('colors.dashboard.card.tab.inactive.light');
+  --dashboard-tab-active: theme('colors.dashboard.card.tab.active.light');
+  --dashboard-tab-box: theme('colors.dashboard.card.tab.box.light');
+  --dashboard-tab-text-inactive: theme('colors.dashboard.card.tab.text.inactive.light');
+  --dashboard-tab-text-active: theme('colors.dashboard.card.tab.text.active.light');
+  --dashboard-badge-bg: #e3f2fd;
+  --dashboard-border: #c9c7c5;
+
+  /* Dashboard Box variables */
+  --dashboard-box-bg: theme('colors.dashboard.box.bg.default.light');
+  --dashboard-box-bg-hover: theme('colors.dashboard.box.bg.hover.light');
+  --dashboard-box-text: theme('colors.dashboard.box.text.default.light');
+  --dashboard-box-text-hover: theme('colors.dashboard.box.text.hover.light');
+  --dashboard-box-border: theme('colors.dashboard.box.border.light');
+
+  /* Unified Dashboard module accent colors */
+  --module-accent-tickets: #0059F5;
+  --module-accent-project: #9747FF;
+  --module-accent-applications: #FFB300;
+  --module-accent-support: #FF478A;
+  --module-accent-attendance: #4AC411;
+  --module-accent-leads: #00ACC1;
+  --module-accent-opportunities: #7E57C2;
+  --module-accent-quotations: #FF7043;
+  --module-accent-sales-orders: #26A69A;
+  --module-accent-purchase: #8D6E63;
+  --module-accent-invoices: #5C6BC0;
+  --module-accent-agent-management: #EC407A;
+
+    /* Scrollbar for light theme */
+    --scroll-thumb: #ffffff; 
+    --Gray: theme('colors.grayButton.light');
+    --fieldsTitle: theme('colors.fieldsTitle.light');
+    --blueText: theme('colors.blueText.light');
+
+    /* Shared list-screen chrome */
+    --chrome-primary: #0C79F7;
+    --chrome-primary-hover: #0A68D4;
+    --chrome-page-title: var(--sidebar-text-primary);
+    --chrome-control-height: 40px;
+    --chrome-radius: 8px;
+    --chrome-filter-bar-bg: #EEF2F7;
+    --chrome-search-icon: #64748B;
+
+    /* Table rows follow card surfaces so striping stays readable in both themes */
+    --table-cell-bg: var(--dashboard-card-bg);
+    --table-cell-alt-bg: var(--dashboard-card-bg2);
+    --table-cell-text: var(--dashboard-text-primary);
+    --table-cell-hover: var(--sidebar-hover-bg);
+    --surface-hover: #ECEEFA;
+
+    --company-switch-banner-bg: #EAF1FD;
+    --company-switch-banner-text: var(--dashboard-text-primary);
+    --company-switch-banner-accent: #0C79F7;
+    --company-switch-banner-border: rgba(12, 121, 247, 0.28);
+    --company-switch-banner-action: #0C79F7;
+}
+
+/* Dark theme variables */
+.dark {
+  color-scheme: dark;
+  --sidebar-bg: theme('colors.sidebar.bg.dark');
+  --sidebar-text-primary: theme('colors.sidebar.text.primary.dark');
+  --sidebar-text-secondary: theme('colors.sidebar.text.secondary.dark');
+  --sidebar-text-selected: theme('colors.sidebar.text.selected.dark');
+  --sidebar-hover-bg: theme('colors.sidebar.item.hover.dark');
+  --sidebar-selected-bg: theme('colors.sidebar.item.selected.dark');
+  --sidebar-border: theme('colors.sidebar.border.dark');
+  --sidebar-divider: theme('colors.sidebar.divider.dark');
+  
+  /* New Sidebar variables — dark */
+  --sidebarNew-bg: #24282E;
+  --sidebarNew-text-primary: #F4F6F8;
+  --sidebarNew-text-secondary: #A7B0BA;
+  --sidebarNew-text-selected: #3B94F8;
+  --sidebarNew-hover-bg: #353B44;
+  --sidebarNew-selected-bg: rgba(12, 121, 247, 0.18);
+  --sidebarNew-open-bg: rgba(12, 121, 247, 0.18);
+  --sidebarNew-sub-selected-bg: rgba(12, 121, 247, 0.12);
+  --sidebarNew-border: #3B94F8;
+  --sidebarNew-divider: rgba(255, 255, 255, 0.08);
+  --sidebarNew-icon: #E6E9ED;
+  --sidebarNew-icon-selected: #3B94F8;
+  /* Navbar variables */
+  --navbar-bg: theme('colors.navbar.bg.dark');
+  --navbar-text-primary: theme('colors.navbar.text.primary.dark');
+  --navbar-text-secondary: theme('colors.navbar.text.secondary.dark');
+  --navbar-text-border: theme('colors.navbar.text.border.dark');
+  --navbar-border: theme('colors.navbar.border.dark');
+  --navbar-dropdown-bg: theme('colors.navbar.dropdown.bg.dark');
+  --navbar-dropdown-hover: theme('colors.navbar.dropdown.hover.dark');
+  --navbar-dropdown-text: theme('colors.navbar.dropdown.text.dark');
+
+  /* Dashboard variables */
+  --dashboard-bg: theme('colors.dashboard.bg.dark');
+  --dashboard-card-bg: theme('colors.dashboard.card.bg.dark');
+  --dashboard-card-bg2: theme('colors.dashboard.card.bg2.dark');
+  --dashboard-text-primary: theme('colors.dashboard.card.text.primary.dark');
+  --dashboard-text-secondary: theme('colors.dashboard.card.text.secondary.dark');
+  --dashboard-tab-inactive: theme('colors.dashboard.card.tab.inactive.dark');
+  --dashboard-tab-active: theme('colors.dashboard.card.tab.active.dark');
+  --dashboard-tab-box: theme('colors.dashboard.card.tab.box.dark');
+  --dashboard-tab-text-inactive: theme('colors.dashboard.card.tab.text.inactive.dark');
+  --dashboard-tab-text-active: theme('colors.dashboard.card.tab.text.active.dark');
+  --dashboard-badge-bg: rgba(59, 148, 248, 0.22);
+  --dashboard-border: rgba(255, 255, 255, 0.08);
+
+  /* Dashboard Box variables */
+  --dashboard-box-bg: theme('colors.dashboard.box.bg.default.dark');
+  --dashboard-box-bg-hover: theme('colors.dashboard.box.bg.hover.dark');
+  --dashboard-box-text: theme('colors.dashboard.box.text.default.dark');
+  --dashboard-box-text-hover: theme('colors.dashboard.box.text.hover.dark');
+  --dashboard-box-border: theme('colors.dashboard.box.border.dark');
+
+  /* Unified Dashboard module accent colors */
+  --module-accent-tickets: #4C93E8;
+  --module-accent-project: #A876FF;
+  --module-accent-applications: #FFC53D;
+  --module-accent-support: #FF6FA0;
+  --module-accent-attendance: #63D426;
+  --module-accent-leads: #26C6DA;
+  --module-accent-opportunities: #9575CD;
+  --module-accent-quotations: #FF8A65;
+  --module-accent-sales-orders: #4DB6AC;
+  --module-accent-purchase: #A1887F;
+  --module-accent-invoices: #7986CB;
+  --module-accent-agent-management: #F06292;
+
+  /* Scrollbar for dark theme */
+  --scroll-thumb: #4A525C;
+  --surface-hover: #353B44;
+  --Gray: theme('colors.grayButton.dark');
+  --fieldsTitle: theme('colors.fieldsTitle.dark');
+  --blueText: theme('colors.blueText.dark');
+
+  /* Shared list-screen chrome */
+  --chrome-primary: #0C79F7;
+  --chrome-primary-hover: #3B94F8;
+  --chrome-page-title: var(--sidebar-text-primary);
+  --chrome-control-height: 40px;
+  --chrome-radius: 8px;
+  --chrome-filter-bar-bg: #353B44;
+  --chrome-search-icon: #A7B0BA;
+  --company-switch-banner-bg: rgba(12, 121, 247, 0.18);
+  --company-switch-banner-text: var(--dashboard-text-primary);
+  --company-switch-banner-accent: #9CC7FF;
+  --company-switch-banner-border: rgba(12, 121, 247, 0.45);
+  --company-switch-banner-action: #FFFFFF;
+}
+
+/* Dark surfaces that still use Tailwind's default gray scale */
+.dark {
+  background-color: #16181D;
+  color: #F4F6F8;
+}
+
+.dark body {
+  background-color: #16181D;
+  color: #F4F6F8;
+}
+
+.dark .bg-gray-800,
+.dark .dark\:bg-gray-800 {
+  background-color: #2C3138;
+}
+
+.dark .bg-gray-700,
+.dark .dark\:bg-gray-700,
+.dark .hover\:bg-gray-700:hover,
+.dark .dark\:hover\:bg-gray-700:hover {
+  background-color: #353B44;
+}
+
+.dark .bg-gray-900,
+.dark .dark\:bg-gray-900 {
+  background-color: #16181D;
+}
+
+.dark .dark\:bg-gray-600,
+.dark .bg-gray-600 {
+  background-color: #3E4550;
+}
+
+.dark .dark\:border-gray-600,
+.dark .dark\:border-gray-700,
+.dark .border-gray-600,
+.dark .border-gray-700 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .divide-gray-600 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.08);
+} 
